@@ -1,5 +1,5 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Head from "next/head";
+import styles from "../styles/Home.module.css";
 
 export default function Home() {
   return (
@@ -14,8 +14,25 @@ export default function Home() {
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
 
+        <figure className="bg-gray-100 rounded-xl p-8">
+          {/* <img className="w-32 h-32 rounded-full mx-auto" src="/sarah-dayan.jpg" alt="" width="384" height="512"> */}
+          <div className="pt-6 space-y-4">
+            <blockquote>
+              <p className="text-lg font-semibold">
+                “Tailwind CSS is the only framework that I've seen scale on
+                large teams. It’s easy to customize, adapts to any design, and
+                the build size is tiny.”
+              </p>
+            </blockquote>
+            <figcaption className="font-medium">
+              <div className="text-cyan-600">Sarah Dayan</div>
+              <div>Staff Engineer, Algolia</div>
+            </figcaption>
+          </div>
+        </figure>
+
         <p className={styles.description}>
-          Get started by editing{' '}
+          Get started by editing{" "}
           <code className={styles.code}>pages/index.js</code>
         </p>
 
@@ -49,17 +66,6 @@ export default function Home() {
           </a>
         </div>
       </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
     </div>
-  )
+  );
 }
