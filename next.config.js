@@ -18,6 +18,8 @@ module.exports = semi({
       "lawlighty-blog.oss-cn-hangzhou.aliyuncs.com",
       "assets.amzport.com",
       "dummyimage.com",
+      "images.unsplash.com",
+      "user-assets.sxlcdn.com",
     ], // 支持 next/image
   },
 });

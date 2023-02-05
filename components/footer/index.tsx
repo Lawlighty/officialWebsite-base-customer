@@ -65,15 +65,13 @@ export const Footer: FC<IFooterProps> = ({
               </span>
             </a>
             <div className="mt-2 text-sm text-gray-500">
-              <div style={{ verticalAlign: "inherit" }}>
-                <div style={{ verticalAlign: "inherit" }}>
-                  <Image
-                    src={qrCode?.image}
-                    alt={qrCode?.text}
-                    width={200}
-                    height={200}
-                  ></Image>
-                </div>
+              <div className="flex justify-center md:justify-start">
+                <Image
+                  src={qrCode?.image}
+                  alt={qrCode?.text}
+                  width={200}
+                  height={200}
+                ></Image>
               </div>
             </div>
           </div>

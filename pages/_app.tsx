@@ -142,7 +142,7 @@ MyApp.getInitialProps = async (context: AppContext) => {
           ],
         },
         {
-          title: "联系我",
+          title: "联系我们",
           list: [
             {
               label: "QQ",

@@ -11,9 +11,41 @@
   opacity: 1;
 }
 
+
 .container {
-  padding:  2rem;
+  // padding:  2rem;
   color: var(--primary-color);
+
+
+  
+.parallax-container {
+  margin-bottom: 4rem;
+  .parallax-image{
+    background: url('https://unsplash.sxlcdn.com/photo-1462899006636-339e08d1844e?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&h=1500&w=2000&fit=clip&fm=jpg') no-repeat fixed;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: 500px;
+  }
+    .parallax-content {
+      position: absolute;
+      padding: 0;
+      top: 200px;
+      margin: 0 auto;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      z-index: 2;
+      height: 100%;
+      font-size: 32px;
+      color: #fff;
+      font-weight: bold;
+    }
+}
+
+
+
 
   .main {
     min-height: 100vh;

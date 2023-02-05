@@ -16,11 +16,26 @@ export const NavBar: FC<INavBarProps> = ({}) => {
   return (
     <div className={styles.navBar}>
       <a href="http://localhost:3000/">
-        <div className={styles.logoIcon}></div>
+        {/* <div className={styles.logoIcon}></div> */}
+        <div className="flex items-center text-xl">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            className="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full"
+            viewBox="0 0 24 24"
+          >
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+          </svg>
+          <span className="ml-1 font-bold">WithMe</span>
+        </div>
       </a>
       <div className={styles.themeArea}>
-        {/* 大小 */}
-        {userAgent === Environment.pc && (
+        {/* 浏览器宿主环境 */}
+        {/* {userAgent === Environment.pc && (
           <span className={styles.text}>当前是pc端样式</span>
         )}
         {userAgent === Environment.ipad && (
@@ -28,7 +43,7 @@ export const NavBar: FC<INavBarProps> = ({}) => {
         )}
         {userAgent === Environment.mobile && (
           <span className={styles.text}>当前是移动端样式</span>
-        )}
+        )} */}
         <NavComp></NavComp>
 
         {/* 图片切换 */}

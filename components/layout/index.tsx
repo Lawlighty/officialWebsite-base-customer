@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { IFooterProps, Footer } from "../footer/index";
 import { INavBarProps, NavBar } from "../navbar/index";
+import { BackTop } from "@douyinfe/semi-ui";
 import styles from "./styles.module.scss";
 
 export interface ILayoutProps {
@@ -16,7 +17,10 @@ export const Layout: FC<ILayoutProps & { children: JSX.Element }> = ({
   return (
     <div className={styles.layout}>
       <NavBar {...navbarData} />
-      <main className={styles.main}>{children}</main>
+      <main className={styles.main}>
+        {children}
+        <BackTop visibilityHeight={100} />
+      </main>
       <Footer {...footerData} />
     </div>
   );
