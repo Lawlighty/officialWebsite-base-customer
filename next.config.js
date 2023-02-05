@@ -13,6 +13,11 @@ module.exports = semi({
     return config;
   },
   images: {
-    domains: ["127.0.0.1", "lawlighty-blog.oss-cn-hangzhou.aliyuncs.com"], // 支持 next/image
+    domains: [
+      "127.0.0.1",
+      "lawlighty-blog.oss-cn-hangzhou.aliyuncs.com",
+      "assets.amzport.com",
+      "dummyimage.com",
+    ], // 支持 next/image
   },
 });

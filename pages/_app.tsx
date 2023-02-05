@@ -31,12 +31,10 @@ const MyApp = (
   return (
     <div>
       <Head>
-        <title>{`Lawlighty 的 个人站点~(${
-          isMobile ? "移动端" : "pc端"
-        })`}</title>
+        <title>{`唯米~(${isMobile ? "移动端" : "pc端"})`}</title>
         <meta
           name="description"
-          content={`Lawlighty 的 个人站点~(${isMobile ? "移动端" : "pc端"})`}
+          content={`唯米~(${isMobile ? "移动端" : "pc端"})`}
         />
         <link rel="icon" href="/l.svg.ico" />
       </Head>
