@@ -19,7 +19,7 @@ export default function Home() {
     height: "400px",
   };
 
-  const titleStyle = {
+  const titleStyle: any = {
     position: "absolute",
     top: "100px",
     left: "100px",

@@ -68,7 +68,10 @@ const ContactAddress = () => {
                 </div>
               </div>
               <div className="relative mb-4">
-                <label for="name" className="leading-7 text-sm text-gray-600">
+                <label
+                  htmlFor="name"
+                  className="leading-7 text-sm text-gray-600"
+                >
                   <div style={{ verticalAlign: "inherit" }}>
                     <div style={{ verticalAlign: "inherit" }}>姓名</div>
                   </div>
@@ -82,7 +85,10 @@ const ContactAddress = () => {
                 />
               </div>
               <div className="relative mb-4">
-                <label for="email" className="leading-7 text-sm text-gray-600">
+                <label
+                  htmlFor="email"
+                  className="leading-7 text-sm text-gray-600"
+                >
                   <div style={{ verticalAlign: "inherit" }}>
                     <div style={{ verticalAlign: "inherit" }}>联系方式</div>
                   </div>
@@ -97,7 +103,7 @@ const ContactAddress = () => {
               </div>
               <div className="relative mb-4">
                 <label
-                  for="message"
+                  htmlFor="message"
                   className="leading-7 text-sm text-gray-600"
                 >
                   <div style={{ verticalAlign: "inherit" }}>

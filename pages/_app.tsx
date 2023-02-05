@@ -55,6 +55,7 @@ const MyApp = (
 
 MyApp.getInitialProps = async (context: AppContext) => {
   // const pageProps = await App.getInitialProps(context);
+  const { Component, ctx } = context;
   const cData = {
     pageProps: {
       title: "Hello Lawlighty's SSR!",
