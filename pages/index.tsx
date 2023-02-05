@@ -177,14 +177,14 @@ export default function Home() {
               <React.Fragment key={item?.title ?? index}>
                 <Link
                   href="/culture"
-                  className="bg-black relative w-full  md:flex-1 lg:w-1/3 flex items-center justify-center h-72 font-heading text-white uppercase tracking-widest hover:opacity-70"
+                  className="transform duration-1000 overflow-hidden bg-black relative w-full  md:flex-1 lg:w-1/3 flex items-center justify-center h-72 font-heading text-white uppercase tracking-widest "
                 >
                   <div className="relative z-10 text-2xl">
                     <span>{item.title}</span>
                   </div>
                   <Image
                     src={item.pic}
-                    className="absolute inset-0 w-full h-full object-cover opacity-80"
+                    className="absolute transform duration-1000 hover:scale-110 inset-0 w-full h-full object-cover  opacity-60 hover:opacity-100"
                     alt="背景图"
                     fill
                   ></Image>
@@ -246,7 +246,7 @@ export default function Home() {
             </div>
             <Link
               href="/culture"
-              className="transform inline-block bg-yellow-800 hover:scale-110 hover:bg-yellow-500 text-white uppercase text-sm tracking-widest font-heading px-8 py-4"
+              className="transform duration-1000 inline-block bg-yellow-800 hover:scale-110 hover:bg-yellow-500 text-white uppercase text-sm tracking-widest font-heading px-8 py-4"
             >
               了解更多
             </Link>
