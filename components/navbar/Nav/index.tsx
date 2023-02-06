@@ -44,20 +44,21 @@ const NavComp = ({}) => {
           { itemKey: "/scheme", text: "解决方案", icon: <IconBriefcase /> },
           { itemKey: "/inst", text: "网站实例", icon: <IconGift /> },
           {
-            itemKey: "about-us",
+            // itemKey: "about-us",
+            itemKey: "/culture",
             text: "关于我们",
             icon: <IconUserGroup />,
-            items: [
-              {
-                itemKey: "/culture",
-                text: "公司文化",
-              },
+            // items: [
+            //   {
+            //     itemKey: "/culture",
+            //     text: "公司文化",
+            //   },
 
-              {
-                itemKey: "/join",
-                text: "加入我们",
-              },
-            ],
+            //   {
+            //     itemKey: "/join",
+            //     text: "加入我们",
+            //   },
+            // ],
           },
         ]}
         onSelect={({ itemKey = "/" }) => {

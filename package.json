@@ -21,7 +21,9 @@
     "magic-design-react": "^0.0.30",
     "next": "13.1.6",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "animate.css": "^4.1.1",
+    "wow.js": "^1.2.2"
   },
   "devDependencies": {
     "@douyinfe/semi-next": "^2.20.3",

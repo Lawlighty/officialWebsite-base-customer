@@ -32,11 +32,52 @@ const MyApp = (
     <div>
       <Head>
         <title>{`唯米~(${isMobile ? "移动端" : "pc端"})`}</title>
+        <meta charSet="utf-8"></meta>
+        {/* 富媒体对象 */}
+        <meta content="唯米科技" property="og:title"></meta>
+        <meta content="https://www.amzport.com/" property="og:url"></meta>
+        <meta
+          content="https://user-assets.sxlcdn.com/images/127227/FtMmix2fL0V--fBetGmvrlkctIE9.png?imageMogr2/strip/thumbnail/1200x630>/quality/90!/format/png"
+          property="og:image"
+        ></meta>
+        <meta content="唯米科技" property="og:site_name"></meta>
+        <meta
+          content="杭州一流的软硬件定制开发服务商，秉承“励志进取，追求卓越”的精神，汇聚前沿科技技术助力企业产品智能创新。唯米科技致力于为客户提供最有价值的互联网+产品解决方案。诚信 · 创新 · 研发 · 服务"
+          property="og:description"
+        ></meta>
+
+        <meta content="唯米科技" itemProp="name"></meta>
+        <meta
+          content="杭州一流的软硬件定制开发服务商，秉承“励志进取，追求卓越”的精神，汇聚前沿科技技术助力企业产品智能创新。唯米科技致力于为客户提供最有价值的互联网+产品解决方案。诚信 · 创新 · 研发 · 服务"
+          itemProp="description"
+        ></meta>
+        <meta
+          content="https://user-assets.sxlcdn.com/images/127227/FtMmix2fL0V--fBetGmvrlkctIE9.png?imageMogr2/strip/thumbnail/1200x630>/quality/90!/format/png"
+          itemProp="image"
+        ></meta>
+
+        {/* twitter */}
+        <meta content="summary_large_image" name="twitter:card"></meta>
+        <meta content="唯米科技" name="twitter:title"></meta>
+        <meta
+          content="杭州一流的软硬件定制开发服务商，秉承“励志进取，追求卓越”的精神，汇聚前沿科技技术助力企业产品智能创新。唯米科技致力于为客户提供最有价值的互联网+产品解决方案。诚信 · 创新 · 研发 · 服务"
+          name="twitter:description"
+        ></meta>
+        <meta
+          content="https://user-assets.sxlcdn.com/images/127227/FtMmix2fL0V--fBetGmvrlkctIE9.png?imageMogr2/strip/thumbnail/1200x630>/quality/90!/format/png"
+          name="twitter:image"
+        ></meta>
+
+        {/* default */}
+        <meta
+          name="keywords"
+          content="杭州,网站开发,钉钉,APP开发,微信小程序,可视化数据,智能车间,智能硬件,软件定制,物联网,阿里云,七牛云,amzport,qiyou"
+        ></meta>
         <meta
           name="description"
-          content={`唯米~(${isMobile ? "移动端" : "pc端"})`}
+          content="杭州一流的软硬件定制开发服务商，秉承“励志进取，追求卓越”的精神，汇聚前沿科技技术助力企业产品智能创新。唯米科技致力于为客户提供最有价值的互联网+产品解决方案。诚信 · 创新 · 研发 · 服务"
         />
-        <meta charSet="utf-8"></meta>
+
         <meta
           name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"

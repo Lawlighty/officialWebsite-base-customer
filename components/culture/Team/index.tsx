@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
+
 const Team = () => {
   const userList = [
     {
@@ -23,6 +24,7 @@ const Team = () => {
       desc: "玛卡巴卡",
     },
   ];
+
   return (
     <>
       <section className="text-gray-600 dark:text-gray-400 body-div">
