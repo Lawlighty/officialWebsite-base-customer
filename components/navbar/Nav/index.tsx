@@ -63,6 +63,7 @@ const NavComp = ({}) => {
         ]}
         onSelect={({ itemKey = "/" }) => {
           console.log("itemKey", itemKey);
+          setOpenSideSheet(false);
           Router.push({ pathname: NAV_LINKS?.[itemKey] });
         }}
       />
