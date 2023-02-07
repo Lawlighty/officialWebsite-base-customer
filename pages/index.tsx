@@ -5,6 +5,7 @@ import styles from "./index.module.scss";
 import cName from "classnames";
 import Link from "next/link";
 import { Carousel, Typography, Space } from "@douyinfe/semi-ui";
+import CompanySlider from "@/components/CompanySlider";
 
 export default function Home() {
   const { Title, Paragraph } = Typography;
@@ -103,9 +104,7 @@ export default function Home() {
             </div>
           </section>
         </div>
-
         {/* 轮播 */}
-
         <Carousel style={style} theme="dark">
           {imgList.map((src, index) => {
             return (
@@ -139,9 +138,7 @@ export default function Home() {
             );
           })}
         </Carousel>
-
         {/* 技术介绍 */}
-
         <section className="text-gray-600 dark:text-gray-200 body-font">
           <div className="container px-5 py-24 mx-auto">
             <div className="xl:w-1/2 lg:w-3/4 w-full mx-auto text-center">
@@ -169,7 +166,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-
         {/* 开发项目展示 */}
         <div className="flex flex-wrap bg-black">
           {serviceList.map((item, index) => {
@@ -194,46 +190,55 @@ export default function Home() {
           })}
         </div>
 
-        <section className="text-gray-600 body-font">
-          <div className="container px-5 py-24 mx-auto flex flex-wrap text-gray-900 dark:text-gray-100">
-            <div className="flex flex-wrap -mx-4 mt-auto mb-auto lg:w-1/2 sm:w-2/3 content-start sm:pr-10">
-              <div className="w-full sm:p-4 px-4 mb-6">
-                <h1 className="title-font font-medium text-xl mb-2">
-                  Moon hashtag pop-up try-hard offal truffaut
-                </h1>
-                <div className="leading-relaxed dark:text-gray-400">
-                  倒精酿啤酒哈巴狗喝醋 live-edge 美食酒吧，keytar neutra 可持续
-                  fingerstache kickstarter。
+        <CompanySlider></CompanySlider>
+
+        <div
+          className="border-t border-gray-200"
+          style={{ backgroundColor: "#fafafa" }}
+        >
+          <div className={styles["serve__btn"]}>Who’s Serving By WithMe?</div>
+
+          <section className="text-gray-600 body-font">
+            <div className="container px-5 pt-4 pb-24 mx-auto flex flex-wrap text-gray-900 dark:text-gray-100">
+              <div className="flex flex-wrap -mx-4 mt-auto mb-auto lg:w-1/2 sm:w-2/3 content-start sm:pr-10">
+                <div className="w-full sm:p-4 px-4 mb-6">
+                  <h1 className="title-font font-medium text-xl mb-2">
+                    Moon hashtag pop-up try-hard offal truffaut
+                  </h1>
+                  <div className="leading-relaxed dark:text-gray-400">
+                    倒精酿啤酒哈巴狗喝醋 live-edge 美食酒吧，keytar neutra
+                    可持续 fingerstache kickstarter。
+                  </div>
+                </div>
+                <div className="p-4 sm:w-1/2 lg:w-1/4 w-1/2">
+                  <h2 className="title-font font-medium text-3xl ">2.7K</h2>
+                  <p className="leading-relaxed">用户</p>
+                </div>
+                <div className="p-4 sm:w-1/2 lg:w-1/4 w-1/2">
+                  <h2 className="title-font font-medium text-3xl ">1.8K</h2>
+                  <p className="leading-relaxed">订阅</p>
+                </div>
+                <div className="p-4 sm:w-1/2 lg:w-1/4 w-1/2">
+                  <h2 className="title-font font-medium text-3xl ">35</h2>
+                  <p className="leading-relaxed">下载</p>
+                </div>
+                <div className="p-4 sm:w-1/2 lg:w-1/4 w-1/2">
+                  <h2 className="title-font font-medium text-3xl ">4个</h2>
+                  <p className="leading-relaxed">产品</p>
                 </div>
               </div>
-              <div className="p-4 sm:w-1/2 lg:w-1/4 w-1/2">
-                <h2 className="title-font font-medium text-3xl ">2.7K</h2>
-                <p className="leading-relaxed">用户</p>
-              </div>
-              <div className="p-4 sm:w-1/2 lg:w-1/4 w-1/2">
-                <h2 className="title-font font-medium text-3xl ">1.8K</h2>
-                <p className="leading-relaxed">订阅</p>
-              </div>
-              <div className="p-4 sm:w-1/2 lg:w-1/4 w-1/2">
-                <h2 className="title-font font-medium text-3xl ">35</h2>
-                <p className="leading-relaxed">下载</p>
-              </div>
-              <div className="p-4 sm:w-1/2 lg:w-1/4 w-1/2">
-                <h2 className="title-font font-medium text-3xl ">4个</h2>
-                <p className="leading-relaxed">产品</p>
+              <div className="w-full  lg:w-1/2 sm:w-1/3 w-full rounded-lg overflow-hidden mt-6 sm:mt-0">
+                <Image
+                  src="https://dummyimage.com/600x300"
+                  className="object-cover object-center w-full h-full"
+                  alt="统计数据"
+                  width={600}
+                  height={300}
+                ></Image>
               </div>
             </div>
-            <div className="w-full  lg:w-1/2 sm:w-1/3 w-full rounded-lg overflow-hidden mt-6 sm:mt-0">
-              <Image
-                src="https://dummyimage.com/600x300"
-                className="object-cover object-center w-full h-full"
-                alt="统计数据"
-                width={600}
-                height={300}
-              ></Image>
-            </div>
-          </div>
-        </section>
+          </section>
+        </div>
 
         {/* 底部 */}
         <div className="relative w-full py-12 px-12">

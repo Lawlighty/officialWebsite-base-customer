@@ -1,0 +1,66 @@
+/*最大的盒子*/
+.find-right {
+    position: relative;
+    float: left;
+    width: 1000px;
+    height: 100%;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+/*装内容的父盒子*/
+.auto {
+    margin: 2rem 0;
+    // width: 3600px;
+    width: 100%;
+    overflow: hidden;
+    // animation: ani 30s linear infinite;
+    :global{
+        svg{
+            cursor: pointer;
+        }
+        svg path {
+            fill: #ccc
+        }
+        svg:hover path {
+            fill: #000
+        }
+    }
+    .autos{
+        margin: 2rem 0;
+        display: flex;
+        width: 1800px;
+        
+        &:first-of-type{
+            animation: ani 30s linear infinite;
+        }
+        &:last-of-type {
+            animation: ani 25s -5s linear infinite;
+        }
+    }
+}
+
+
+
+.auto a {
+    display: inline-block;
+    padding: 0 2.2rem;
+    vertical-align: middle;
+    outline: none;
+    cursor: default;
+}
+
+
+
+
+/* 定义动画 */
+
+@keyframes ani {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(-1800px, 0, 0);
+    }
+}
