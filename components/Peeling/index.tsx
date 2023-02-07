@@ -9,17 +9,20 @@ const Peeling = () => {
   const { theme, setTheme } = useContext(ThemeContext);
   const { userAgent } = useContext(UserAgentContext);
 
-  useEffect(() => {
-    let opts = {
-      content: `当前的userAgent:${userAgent}`,
-      duration: 10,
-    };
-    Toast.info(opts);
-  }, [userAgent]);
+  // useEffect(() => {
+  //   let opts = {
+  //     content: `当前的userAgent:${userAgent}`,
+  //     duration: 10,
+  //   };
+  //   Toast.info(opts);
+  // }, [userAgent]);
   return (
     <>
       {/* // ? 移动端大小适配 */}
-      <label style={{ zoom: userAgent === Environment.mobile ? ".2" : ".3" }}>
+      {/* <label style={{ zoom: userAgent === Environment.mobile ? ".2" : ".3" }}> */}
+      <label
+        style={{ fontSize: userAgent === Environment.mobile ? "3px" : "4px" }}
+      >
         <Script src="https://code.iconify.design/1/1.0.4/iconify.min.js"></Script>
         {/* <input className={styles["toggle-checkbox"]} type="checkbox"></input> */}
         <div
