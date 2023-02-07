@@ -15,7 +15,7 @@ const Peeling = () => {
       duration: 10,
     };
     Toast.info(opts);
-  }, []);
+  }, [userAgent]);
   return (
     <>
       {/* // ? 移动端大小适配 */}
