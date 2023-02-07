@@ -1,16 +1,25 @@
 import { Environment, Themes } from "@/constants/enum";
 import { ThemeContext } from "@/stores/theme";
 import { UserAgentContext } from "@/stores/userAgent";
+import { Toast } from "@douyinfe/semi-ui";
 import Script from "next/script";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import styles from "./styles.module.scss";
 const Peeling = () => {
   const { theme, setTheme } = useContext(ThemeContext);
   const { userAgent } = useContext(UserAgentContext);
+
+  useEffect(() => {
+    let opts = {
+      content: `当前的userAgent:${userAgent}`,
+      duration: 10,
+    };
+    Toast.info(opts);
+  }, []);
   return (
     <>
       {/* // ? 移动端大小适配 */}
-      <label style={{ zoom: userAgent === Environment.mobile ? 0.2 : 0.3 }}>
+      <label style={{ zoom: userAgent === Environment.mobile ? ".2" : ".3" }}>
         <Script src="https://code.iconify.design/1/1.0.4/iconify.min.js"></Script>
         {/* <input className={styles["toggle-checkbox"]} type="checkbox"></input> */}
         <div
