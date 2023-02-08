@@ -29,7 +29,7 @@
     .autos{
         margin: 2rem 0;
         display: flex;
-        width: 1800px;
+        // width: 1800px;
         
         &:first-of-type{
             animation: ani 30s linear infinite;
@@ -40,6 +40,17 @@
     }
 }
 
+.dark{
+    :global {
+        svg path {
+            fill: #ccc
+        }
+
+        svg:hover path {
+            fill: #fff
+        }
+    }
+}
 
 
 .auto a {
@@ -61,6 +72,6 @@
     }
 
     100% {
-        transform: translate3d(-1800px, 0, 0);
+        transform: translate3d(-50%, 0, 0);
     }
 }

@@ -6,7 +6,7 @@ import cName from "classnames";
 import Link from "next/link";
 import { Carousel, Typography, Space } from "@douyinfe/semi-ui";
 import CompanySlider from "@/components/CompanySlider";
-
+import Router from "next/router";
 export default function Home() {
   const { Title, Paragraph } = Typography;
 
@@ -193,19 +193,38 @@ export default function Home() {
         <CompanySlider></CompanySlider>
 
         <div
-          className="border-t border-gray-200"
+          className="border-t border-gray-200 text-black"
           style={{ backgroundColor: "#fafafa" }}
         >
-          <div className={styles["serve__btn"]}>Who’s Serving By WithMe?</div>
+          <div className={styles["serve__btn"]}>
+            <Link
+              scroll={true}
+              href="/culture"
+              className="inline-block bg-black text-white uppercase text-2xl tracking-widest font-heading px-4 py-2 mr-2 rounded-md"
+            >
+              Who&apos;s
+            </Link>
+            {/* <div
+              className="inline-block bg-black text-white uppercase text-2xl tracking-widest font-heading px-4 py-2 mr-2 rounded-md"
+              onClick={() =>
+                Router.push("/culture").then(
+                  () => window && window.scrollTo(0, 0)
+                )
+              }
+            >
+              Who's
+            </div> */}
+            Serving By WithMe?
+          </div>
 
           <section className="text-gray-600 body-font">
-            <div className="container px-5 pt-4 pb-24 mx-auto flex flex-wrap text-gray-900 dark:text-gray-100">
+            <div className="container px-5 pt-4 pb-24 mx-auto flex flex-wrap text-gray-900 ">
               <div className="flex flex-wrap -mx-4 mt-auto mb-auto lg:w-1/2 sm:w-2/3 content-start sm:pr-10">
                 <div className="w-full sm:p-4 px-4 mb-6">
                   <h1 className="title-font font-medium text-xl mb-2">
                     Moon hashtag pop-up try-hard offal truffaut
                   </h1>
-                  <div className="leading-relaxed dark:text-gray-400">
+                  <div className="leading-relaxed ">
                     倒精酿啤酒哈巴狗喝醋 live-edge 美食酒吧，keytar neutra
                     可持续 fingerstache kickstarter。
                   </div>

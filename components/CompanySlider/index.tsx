@@ -1,18 +1,27 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./styles.module.scss";
-import Image from "next/image";
 import { topList, bottomList } from "./svgs";
+import { ThemeContext } from "@/stores/theme";
+import cName from "classnames";
+import { Themes } from "@/constants/enum";
 const CompanySlider = () => {
+  const { theme } = useContext(ThemeContext);
   return (
     <div>
       <div className={styles["auto"]}>
         {[topList, bottomList].map((item = [], index) => {
           return (
             <div key={index} className={styles["autos"]}>
-              {[...item, ...item, ...item].map((svg, dex) => {
+              {[...item].map((svg, dex) => {
                 return (
                   <React.Fragment key={dex}>
-                    <a className="dark:hover:text-red-300">{svg()}</a>
+                    <a
+                      className={cName({
+                        [styles["dark"]]: theme !== Themes.light,
+                      })}
+                    >
+                      {svg()}
+                    </a>
                   </React.Fragment>
                 );
               })}
