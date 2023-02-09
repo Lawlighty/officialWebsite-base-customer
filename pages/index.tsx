@@ -6,7 +6,6 @@ import cName from "classnames";
 import Link from "next/link";
 import { Carousel, Typography, Space } from "@douyinfe/semi-ui";
 import CompanySlider from "@/components/CompanySlider";
-import Router from "next/router";
 export default function Home() {
   const { Title, Paragraph } = Typography;
 

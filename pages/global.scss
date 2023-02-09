@@ -33,7 +33,7 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
         Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     color: var(--primary-color);
-    overflow: hidden;
+    // overflow: hidden;// ! 这里是是处理 ios 橡皮筋 但是会导致 link 跳转默认回到顶部失效,因为不是window的滚动条
 }
 a {
     color: inherit;
@@ -44,9 +44,9 @@ a {
     box-sizing: border-box;
 }
 
-
-#__next {
-    height: 100vh;
-    overflow: auto;
-    position: relative;
-}
+// 这里是是处理 ios 橡皮筋
+// #__next {
+//     height: 100vh;
+//     overflow: auto;
+//     position: relative;
+// }

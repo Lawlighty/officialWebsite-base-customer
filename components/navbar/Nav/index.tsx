@@ -20,7 +20,7 @@ interface IMode {
 const NAV_LINKS: any = {
   "/": "/",
   "/scheme": "/scheme",
-  "/inst": "/inst",
+  "/showcase": "/showcase",
   "/culture": "/culture",
   "/join": "/join",
 };
@@ -42,7 +42,7 @@ const NavComp = ({}) => {
         items={[
           { itemKey: "/", text: "首页", icon: <IconHome /> },
           { itemKey: "/scheme", text: "解决方案", icon: <IconBriefcase /> },
-          { itemKey: "/inst", text: "网站实例", icon: <IconGift /> },
+          { itemKey: "/showcase", text: "网站实例", icon: <IconGift /> },
           {
             // itemKey: "about-us",
             itemKey: "/culture",

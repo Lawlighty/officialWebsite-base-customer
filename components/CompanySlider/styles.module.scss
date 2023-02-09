@@ -29,7 +29,7 @@
     .autos{
         margin: 2rem 0;
         display: flex;
-        // width: 1800px;
+        width: max-content; // 重要
         
         &:first-of-type{
             animation: ani 30s linear infinite;

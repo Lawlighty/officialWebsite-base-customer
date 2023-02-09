@@ -20,6 +20,7 @@ module.exports = semi({
       "dummyimage.com",
       "images.unsplash.com",
       "user-assets.sxlcdn.com",
+      "nextjs.org",
     ], // 支持 next/image
   },
 });

@@ -19,7 +19,7 @@ export const Layout: FC<ILayoutProps & { children: JSX.Element }> = ({
       <NavBar {...navbarData} />
       <main className={styles.main}>
         {children}
-        <BackTop visibilityHeight={100} />
+        {/* <BackTop visibilityHeight={100} /> */}
       </main>
       <Footer {...footerData} />
     </div>
