@@ -198,7 +198,7 @@ export default function Home() {
           <div className={styles["serve__btn"]}>
             <Link
               scroll={true}
-              href="/culture"
+              href="/showcase"
               className="inline-block bg-black text-white uppercase text-2xl tracking-widest font-heading px-4 py-2 mr-2 rounded-md"
             >
               Who&apos;s
