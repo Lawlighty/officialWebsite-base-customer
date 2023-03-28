@@ -1,0 +1,61 @@
+.chat_box > .message {
+  --radius: 1.75rem;
+  margin: 2rem 0;
+  position: relative;
+  border-radius: var(--radius);
+  grid-column: span 6 / -1;
+  padding: 1rem 1.5rem;
+  animation: fade-in 0.3s ease-out forwards;
+}
+.chat_box > .message_user {
+  background: linear-gradient(83.21deg, #3245ff 0%, #bc52ee 100%);
+  border-bottom-right-radius: 0;
+  color: #fff;
+}
+.chat_box > .message_user:after {
+  content: "";
+  background: #bc52ee;
+  right: calc(var(--size) * -1);
+  border-bottom-right-radius: 8rem;
+  background: radial-gradient(
+    circle at top right,
+    rgba(0, 0, 0, 0) 0,
+    rgba(0, 0, 0, 0) var(--size),
+    #bc52ee var(--size)
+  );
+  --size: 1rem;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  height: var(--size);
+  width: var(--size);
+  z-index: 2;
+}
+
+// .message_back:before {
+//   content: "";
+//   z-index: -1;
+//   background: #17191e;
+//   position: absolute;
+//   inset: 2px;
+// }
+
+// .message_back:after {
+//   content: "";
+//   z-index: -2;
+//   background: linear-gradient(247.23deg, #4af2c8 0%, #2f4cb3 100%);
+//   position: absolute;
+//   inset: 0;
+// }
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

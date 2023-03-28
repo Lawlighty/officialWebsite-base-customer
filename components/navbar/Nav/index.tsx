@@ -21,6 +21,7 @@ const NAV_LINKS: any = {
   "/": "/",
   "/scheme": "/scheme",
   "/showcase": "/showcase",
+  "/gpt": "/gpt",
   "/culture": "/culture",
   "/join": "/join",
 };
@@ -43,6 +44,7 @@ const NavComp = ({}) => {
           { itemKey: "/", text: "首页", icon: <IconHome /> },
           // { itemKey: "/scheme", text: "解决方案", icon: <IconBriefcase /> },
           { itemKey: "/showcase", text: "网站实例", icon: <IconGift /> },
+          { itemKey: "/gpt", text: "chatGPT", icon: <IconGift /> },
           {
             // itemKey: "about-us",
             itemKey: "/culture",
