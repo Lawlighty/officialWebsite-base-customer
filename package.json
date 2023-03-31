@@ -7,7 +7,7 @@
     "debugger": "cross-env NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
     "lint": "next lint",
-    "start": "next start",
+    "start": "next start -p 3001",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
@@ -15,14 +15,18 @@
     "@types/axios": "^0.14.0",
     "@types/classnames": "^2.3.1",
     "@types/lodash": "^4.14.191",
+    "@types/showdown": "^2.0.0",
+    "animate.css": "^4.1.1",
     "axios": "^1.0.0",
     "classnames": "^2.3.2",
+    "dayjs": "^1.11.7",
     "lodash": "^4.17.21",
     "magic-design-react": "^0.0.30",
     "next": "13.1.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "animate.css": "^4.1.1",
+    "showdown": "^2.1.0",
+    "showdown-highlight": "^3.1.0",
     "wow.js": "^1.2.2"
   },
   "devDependencies": {

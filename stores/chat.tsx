@@ -1,5 +1,5 @@
 import React, { useState, useEffect, createContext } from "react";
-
+const dayjs = require("dayjs");
 interface IChatContextProps {
   isLoading: boolean;
   qList: [];
@@ -19,12 +19,14 @@ export const ChatContextProvider = ({ children }: IProps): JSX.Element => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [qList, setQList] = useState<any>([
     {
+      time: dayjs().format("YYYY-MM-DD HH:mm:ss"),
       user: "user",
       content: "什么是快乐星球",
       type: "others",
       customClass: "others",
     },
     {
+      time: dayjs().format("YYYY-MM-DD HH:mm:ss"),
       user: "ai",
       content: "bababab,是快乐星球",
       type: "others",

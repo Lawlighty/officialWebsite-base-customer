@@ -1,10 +1,30 @@
 import styles from "./styles.module.scss";
 import cName from "classnames";
 import { TextArea } from "@douyinfe/semi-ui";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { ChatContext } from "@/stores/chat";
+import { CHATDOMAIN } from "@/utils";
+import axios from "axios";
+import { Toast } from "@douyinfe/semi-ui";
+import { ThemeContext } from "@/stores/theme";
+import { Themes } from "@/constants/enum";
+
 const ChatFooter = () => {
+  const { theme } = useContext(ThemeContext);
+
   const { isLoading, qList, setIsLoading, setQList } = useContext(ChatContext);
+  const [value, setValue] = useState<string>("");
+  const updateScrollTop = () => {
+    if (document) {
+      let scrollTarget = document.getElementById("chat_box");
+      if (scrollTarget) {
+        setTimeout(() => {
+          (scrollTarget as any).scrollTop = (scrollTarget as any).scrollHeight;
+        }, 500);
+      }
+    }
+  };
+
   const sendMsg = () => {
     if (isLoading) {
       return;
@@ -27,16 +47,79 @@ const ChatFooter = () => {
       });
       setQList([...cList]);
       setIsLoading(false);
+      updateScrollTop();
     }, 2000);
   };
+
+  const handle = async () => {
+    if (isLoading) {
+      return Toast.info("小蜜正在处理上一个问题中哦~");
+    }
+    if (!value) {
+      return Toast.info("请客官输入内容哦~");
+    }
+    setIsLoading(true);
+    // const es = new EventSource(`http://supportal.supcon.com`);
+
+    let cList: any = [...qList];
+    cList.push({
+      user: "user",
+      content: value,
+      type: "others",
+      customClass: "others",
+    });
+    setQList([...cList]);
+
+    const { data } = await axios.post(`${CHATDOMAIN}`, {
+      prompt: value,
+      options: {
+        parentMessageId: "chatcmpl-6ybgZ9O2HU8C65p4borepy9NvrR3K",
+      },
+    });
+    setIsLoading(false);
+
+    if (typeof data === "string") {
+      setValue("");
+      // 读取
+      let backList = `${data}`?.split?.("\n").map((item: any) => {
+        return JSON.parse(item);
+      });
+      let res = backList?.pop()?.text ?? "";
+      cList.push({
+        user: "ai",
+        content: res,
+        type: "others",
+        customClass: "others",
+      });
+      setQList([...cList]);
+      updateScrollTop();
+    } else {
+      const { message = "", status = "Fail" } = data;
+      if (status === "Fail") {
+        Toast.error(message);
+      }
+    }
+  };
   return (
-    <div className="mx-8 lg:mx-16">
+    <div className="lg:mx-40">
       <footer className={cName(styles["container"], styles["astro-J7PV25F6"])}>
         {/* <div className="autogrow astro-J7PV25F6"> */}
-        <TextArea autosize />
+        <textarea
+          // autosize
+          // rows="3"
+          placeholder="请输入内容~"
+          className={cName(styles["qusetion_textArea"], {
+            [styles["dark_text"]]: theme === Themes.dark,
+          })}
+          value={value}
+          onChange={(e) => {
+            setValue(e.target.value);
+          }}
+        />
         <button
           onClick={() => {
-            sendMsg();
+            // sendMsg();
+            handle();
           }}
           type="submit"
           className={cName(styles["astro-J7PV25F6"])}

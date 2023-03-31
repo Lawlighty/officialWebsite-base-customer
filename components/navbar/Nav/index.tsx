@@ -30,9 +30,7 @@ const NavComp = ({}) => {
   const { userAgent } = useContext(UserAgentContext);
   const { theme } = useContext(ThemeContext);
   const [openSideSheet, setOpenSideSheet] = useState<boolean>(false);
-  useEffect(() => {
-    console.log("router", router);
-  }, [router]);
+
   const NavMenu = (props: IMode) => {
     const { mode = "horizontal" } = props;
     return (

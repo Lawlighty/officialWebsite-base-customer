@@ -3,6 +3,8 @@ import Image from "next/image";
 import publicLogo from "@/public/images/footer/public_logo.png";
 import cName from "classnames";
 import styles from "./styles.module.scss";
+import { useRouter } from "next/router";
+
 interface ILink {
   label: string;
   link?: string;
@@ -35,8 +37,14 @@ export const Footer: FC<IFooterProps> = ({
   siteNumber,
   publicNumber,
 }) => {
+  const router = useRouter();
+  const { pathname = "/" } = router;
   return (
-    <div>
+    <div
+      className={cName({
+        hidden: pathname.indexOf("/gpt") >= 0,
+      })}
+    >
       <footer className="text-gray-600 dark:text-gray-100  body-div">
         <div className="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
           <div className="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">

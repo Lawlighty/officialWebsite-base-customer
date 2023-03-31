@@ -1,10 +1,16 @@
+.chat_box{
+  flex:1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
 .chat_box > .message {
   --radius: 1.75rem;
-  margin: 2rem 0;
+  margin: .5rem 1rem;
   position: relative;
   border-radius: var(--radius);
   grid-column: span 6 / -1;
-  padding: 1rem 1.5rem;
+  // padding: 1rem 1.5rem;
   animation: fade-in 0.3s ease-out forwards;
 }
 .chat_box > .message_user {
