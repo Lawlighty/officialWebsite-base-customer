@@ -8,6 +8,7 @@ import {
   IconGift,
   IconUserGroup,
   IconBriefcase,
+  IconComment,
 } from "@douyinfe/semi-icons";
 import { SideSheet } from "@douyinfe/semi-ui";
 import { Environment, Themes } from "@/constants/enum";
@@ -42,7 +43,7 @@ const NavComp = ({}) => {
           { itemKey: "/", text: "首页", icon: <IconHome /> },
           // { itemKey: "/scheme", text: "解决方案", icon: <IconBriefcase /> },
           { itemKey: "/showcase", text: "网站实例", icon: <IconGift /> },
-          { itemKey: "/gpt", text: "chatGPT", icon: <IconGift /> },
+          { itemKey: "/gpt", text: "chatGPT", icon: <IconComment /> },
           {
             // itemKey: "about-us",
             itemKey: "/culture",

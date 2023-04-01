@@ -1,7 +1,7 @@
 import styles from "./styles.module.scss";
 import cName from "classnames";
 import { TextArea } from "@douyinfe/semi-ui";
-import { useContext, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import { ChatContext } from "@/stores/chat";
 import { CHATDOMAIN } from "@/utils";
 import axios from "axios";
@@ -12,46 +12,57 @@ import { Themes } from "@/constants/enum";
 const ChatFooter = () => {
   const { theme } = useContext(ThemeContext);
 
-  const { isLoading, qList, setIsLoading, setQList } = useContext(ChatContext);
-  const [value, setValue] = useState<string>("");
-  const updateScrollTop = () => {
+  const {
+    isLoading,
+    qList,
+    value,
+    setResponse,
+    setValue,
+    setIsLoading,
+    setQList,
+  } = useContext(ChatContext);
+
+  const messageRef = useRef<string>("");
+  const updateScrollTop = (dely = false, wait = 500) => {
     if (document) {
       let scrollTarget = document.getElementById("chat_box");
       if (scrollTarget) {
-        setTimeout(() => {
+        if (dely) {
+          setTimeout(() => {
+            (scrollTarget as any).scrollTop = (
+              scrollTarget as any
+            ).scrollHeight;
+          }, wait);
+        } else {
           (scrollTarget as any).scrollTop = (scrollTarget as any).scrollHeight;
-        }, 500);
+        }
       }
     }
   };
 
-  const sendMsg = () => {
-    if (isLoading) {
-      return;
-    }
-    let cList: any = [...qList];
-    cList.push({
-      user: "user",
-      content: "你哈",
-      type: "others",
-      customClass: "others",
-    });
-    setQList([...cList]);
-    setIsLoading(true);
-    setTimeout(() => {
-      cList.push({
-        user: "ai",
-        content: "铁山靠~",
-        type: "others",
-        customClass: "others",
-      });
-      setQList([...cList]);
-      setIsLoading(false);
+  const toHandleDownloadProgress = (progressEvent: any) => {
+    const { event } = progressEvent;
+    const xhr = event.target;
+    const { responseText } = xhr;
+    const lastIndex = responseText.lastIndexOf("\n");
+    let chunk = responseText;
+
+    if (lastIndex !== -1) chunk = responseText.substring(lastIndex);
+
+    try {
+      const data = JSON.parse(chunk);
+      let text = data?.text ?? "";
+      messageRef.current = text;
+
+      setResponse(messageRef.current);
       updateScrollTop();
-    }, 2000);
+    } catch (error) {
+      //
+    }
   };
 
   const handle = async () => {
+    messageRef.current = "";
     if (isLoading) {
       return Toast.info("小蜜正在处理上一个问题中哦~");
     }
@@ -70,29 +81,37 @@ const ChatFooter = () => {
     });
     setQList([...cList]);
 
-    const { data } = await axios.post(`${CHATDOMAIN}`, {
-      prompt: value,
-      options: {
-        parentMessageId: "chatcmpl-6ybgZ9O2HU8C65p4borepy9NvrR3K",
+    const { data } = await axios({
+      url: `${CHATDOMAIN}`,
+      method: "post",
+      data: {
+        prompt: value,
+        options: {
+          parentMessageId: "chatcmpl-6ybgZ9O2HU8C65p4borepy9NvrR3K",
+        },
+      },
+      onDownloadProgress: (progressEvent: any) => {
+        toHandleDownloadProgress(progressEvent);
       },
     });
     setIsLoading(false);
 
     if (typeof data === "string") {
+
       setValue("");
       // 读取
-      let backList = `${data}`?.split?.("\n").map((item: any) => {
-        return JSON.parse(item);
-      });
-      let res = backList?.pop()?.text ?? "";
+      // let backList = `${data}`?.split?.("\n").map((item: any) => {
+      //   return JSON.parse(item);
+      // });
       cList.push({
         user: "ai",
-        content: res,
+        content: messageRef.current,
         type: "others",
         customClass: "others",
       });
+      setResponse("");
       setQList([...cList]);
-      updateScrollTop();
+      updateScrollTop(true);
     } else {
       const { message = "", status = "Fail" } = data;
       if (status === "Fail") {

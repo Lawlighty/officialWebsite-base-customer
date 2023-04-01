@@ -3,8 +3,12 @@ const dayjs = require("dayjs");
 interface IChatContextProps {
   isLoading: boolean;
   qList: [];
+  value: string;
+  response: string;
   setIsLoading: (loading: boolean) => void;
   setQList: (list: any[]) => void;
+  setValue: (str: string) => void;
+  setResponse: (str: string) => void;
 }
 
 interface IProps {
@@ -33,7 +37,9 @@ export const ChatContextProvider = ({ children }: IProps): JSX.Element => {
       customClass: "others",
     },
   ]);
-  //   const [qList, setQList] = useState<any>([]);
+
+  const [value, setValue] = useState<string>("");
+  const [response, setResponse] = useState<string>("");
 
   // 监听本地缓存来同步不同页面间的主题
   useEffect(() => {}, []);
@@ -43,8 +49,12 @@ export const ChatContextProvider = ({ children }: IProps): JSX.Element => {
       value={{
         isLoading,
         qList,
+        value,
+        response,
         setIsLoading,
         setQList,
+        setValue,
+        setResponse,
       }}
     >
       {children}
