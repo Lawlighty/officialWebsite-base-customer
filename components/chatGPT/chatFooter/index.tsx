@@ -97,7 +97,6 @@ const ChatFooter = () => {
     setIsLoading(false);
 
     if (typeof data === "string") {
-
       setValue("");
       // 读取
       // let backList = `${data}`?.split?.("\n").map((item: any) => {
@@ -111,6 +110,8 @@ const ChatFooter = () => {
       });
       setResponse("");
       setQList([...cList]);
+      Toast.success("回答完毕~");
+
       updateScrollTop(true);
     } else {
       const { message = "", status = "Fail" } = data;
